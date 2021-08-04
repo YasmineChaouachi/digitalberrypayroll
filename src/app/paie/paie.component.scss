@@ -1,0 +1,64 @@
+.totalbody{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/1a/Abstract-background-white-12.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: auto;
+}
+.paie-content{
+  margin-left: auto;
+  margin-right: auto;
+  width: 65em;
+}
+#th{
+  color:rgb(214, 18, 116);
+}
+
+#b1{
+  line-height: 3em;
+  ;
+}
+#b2{
+  line-height: 3em;
+}
+#b3{
+  line-height: 3em;
+}
+#btn1{
+  position:relative;
+  width: 16em;
+  left:70%
+}
+#btn2{
+  position:relative;
+  width: 16em;
+  left:70%
+}
+#btn3{
+  position:relative;
+  width: 16em;
+  left:70%
+}
+#list1{
+  position:relative;
+  width: 18em;
+  border: inset ;
+  pointer-events: stroke;
+  border-color: #16070d6b;
+  border-width: 10px;
+  margin-top: -10px;
+  z-index: 100;
+  left: 20%;
+}
+
+#list2{
+  position:relative;
+  width: 18em;
+  border: inset  ;
+  pointer-events: stroke;
+  border-color: #16070d6b;
+  border-width: 10px;
+  margin-top: -10px;
+  z-index: 100;
+  left: 20%;
+}

@@ -1,0 +1,123 @@
+<div class="totalbody">
+  <div class="paie-content">
+    <tr style="align-content: center;">
+          <th>
+            <div class="btn-group mr-4" style="margin-left: 23px;">
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-outline-dark" ngbDropdownToggle>Liste des mois Janvier-Décembre</button>
+                <div class="dropdown-menu" ngbDropdownMenu >
+                  <button ngbDropdownItem>Janvier</button>
+                  <button ngbDropdownItem>Février</button>
+                  <button ngbDropdownItem>Mars</button>
+                  <button ngbDropdownItem>Avril</button>
+                  <button ngbDropdownItem>Mai</button>
+                  <button ngbDropdownItem>Juin</button>
+                  <button ngbDropdownItem>Juillet</button>
+                  <button ngbDropdownItem>Août</button>
+                  <button ngbDropdownItem>Septembre</button>
+                  <button ngbDropdownItem>Octobre</button>
+                  <button ngbDropdownItem>Novembre</button>
+                  <button ngbDropdownItem>Décembre</button>
+                </div>
+              </div>
+            </div>
+            </th>
+          <th>
+          <div class="btn-group mr-3">
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-outline-dark" ngbDropdownToggle>Liste des Années 2017-2027</button>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <button ngbDropdownItem>2017</button>
+                <button ngbDropdownItem>2018</button>
+                <button ngbDropdownItem>2019</button>
+                <button ngbDropdownItem>2020</button>
+                <button ngbDropdownItem>2021</button>
+                <button ngbDropdownItem>2022</button>
+                <button ngbDropdownItem>2023</button>
+                <button ngbDropdownItem>2024</button>
+                <button ngbDropdownItem>2025</button>
+                <button ngbDropdownItem>2026</button>
+                <button ngbDropdownItem>2027</button>
+
+              </div>
+            </div>
+          </div>
+          </th>
+      <th>
+    <div align="right">
+      <tr id="b1"><button id="btn1" type="button" class="btn btn-info text-light ">Lancer la paie</button></tr>
+      <tr id="b2"><button id="btn2" type="button" class="btn btn-info">Partager le livre de paie</button></tr>
+      <tr id="b3"><button id="btn3" type="button" class="btn btn-info">Envoyer les bulletins de salaires</button></tr>
+      </div>
+    </th>
+    </tr>
+  <div class="container">
+      <br>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr id=th>
+            <th>ID</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Position</th>
+              <th>Date de commencement</th>
+              <th>Action</th>
+              <th>Rubrique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employe of employes">
+              <td>{{employe.id}}</td>
+              <td>{{employe.Nom}}</td>
+              <td>{{employe.prenom}}</td>
+              <td>{{employe.position}}</td>
+              <td>{{employe.date}}</td>
+              <td ><button type="button" class="btn  btn-outline-danger" (click)="showDetails(Rubrique,employe)" >Ajouter une rubrique</button></td>
+            <td *ngFor="let rubrique of employe.rubrique"><table>
+                <tr>
+                  <td>
+                  {{rubrique.nom}}
+                  </td>
+                  <td>
+                    {{rubrique.contenu}}
+                  </td>
+                </tr>
+              </table></td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+    </div>
+</div>
+<ng-template let-modal #Rubrique>
+  <div class="modal-header">
+    <h4 class="modal-title" style="color: rgb(113, 116, 116);">Ajouter une Rubrique</h4>
+    <button type="button" class="close" style="color: rgb(5, 39, 230);" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group row">
+      <!-- <form [formGroup]="rubriqueForm" class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="input" class="form-control"  placeholder="Nom de la rubrique">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="input" class="form-control"  placeholder="Contenu de la rubrique">
+        </div>
+      </form> -->
+      <form  [formGroup]="rubriqueForm">
+
+        <label for="nom">First Name: </label>
+        <input id="nom" type="text" formControlName="nom">
+
+        <label for="contenu">Last Name: </label>
+        <input id="contenu" type="text" formControlName="contenu">
+
+      </form>
+  <div class="modal-footer">
+    <button type="button" class="btn add btn-outline-primary lighten-1" (click)="addNew()">Ajouter</button>
+  </div>
+</div>
+  </div>
+</ng-template>

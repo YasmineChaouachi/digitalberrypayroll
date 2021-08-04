@@ -1,0 +1,33 @@
+<div class="totalbody">
+  <div class="liste-content">
+    <p class="text-center">Liste des employés</p>
+  <div class="container">
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Rechercher..">
+      </div>
+  </form>
+      <br>
+      <table datatable class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Position</th>
+            <th>Date de commencement</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <tr *ngFor="let employe of employes">
+            <td>{{employe.id}}</td>
+            <td>{{employe.Nom}}</td>
+            <td>{{employe.prenom}}</td>
+            <td>{{employe.position}}</td>
+            <td>{{employe.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</div>
