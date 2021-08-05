@@ -13,6 +13,7 @@ import { MoredetailsComponent } from './moredetails/moredetails.component';
 import { PaieComponent } from './paie/paie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaieItemComponent } from './paie-item/paie-item.component';
+import { MoredetailsItemComponent } from './moredetails-item/moredetails-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { PaieItemComponent } from './paie-item/paie-item.component';
     ListedessalariesComponent,
     MoredetailsComponent,
     PaieComponent,
-    PaieItemComponent
+    PaieItemComponent,
+    MoredetailsItemComponent
   ],
   imports: [
     BrowserModule,

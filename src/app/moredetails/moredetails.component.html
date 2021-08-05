@@ -13,66 +13,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let employe of employes">
-            <td>{{employe.id}}</td>
-            <td>{{employe.Nom}}</td>
-            <td>{{employe.prenom}}</td>
-            <td>{{employe.position}}</td>
-            <td>{{employe.date}}</td>
-            <td><button type="submit" class="btn btn-lg-info me-4 text-reset" (click)="showDetails(details)" ><i class="fas fa-info-circle"></i></button></td>
+            <app-moredetails-item style="display: contents;" [emp]="employe"></app-moredetails-item>
           </tr>
         </tbody>
       </table>
     </div>
     </div>
-    <ng-template let-modal #details>
-        <div class="modal-header">
-          <h4 class="modal-title" style="color: rgb(110, 168, 216);">Plus de détails!</h4>
-          <button type="button" class="close" style="color: rgb(7, 21, 223);" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group row">
-  <label for="staticEmail" class="col-sm-2 col-form-label">Nom </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="XXXXX">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">Prénom </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="XXXXX">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">Adresse </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="example-ADRESSE">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">Ville </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="Paris">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">E-mail </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="email@example.com">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">N° de Téléphone </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="0038651688">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">CIN </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="123456789">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">N° CNSS</label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="00000000000N">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">N° d'immatriculation fiscale </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="0909090909090">
-        </div>
-        <label for="staticEmail" class="col-sm-2 col-form-label">RIB </label>
-  <div class="col-sm-10">
-    <input type="text" readonly class="form-control-plaintext" id="static" value="0XXXXXXXXXX">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary lighten-1" (click)="modal.close('Close click')">Fermer</button>
-        </div>
