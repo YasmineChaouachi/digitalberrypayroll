@@ -11,6 +11,6 @@ export const employes: Employee[]=[
   {id:9,Nom:'Morel',prenom:'Jasmine',position:'Administratrice de réseau',date:'30 mars 2005',rubrique:[{nom:'chaouachi',contenu:'date'}]},
   {id:10,Nom:'Hubert',prenom:'Louis',position:'Ingénieur Cloud Computing',date:'7 juillet 2004',rubrique:[{nom:'chaouachi',contenu:'date'}]},
   {id:11,Nom:'Simon',prenom:'Fabienne',position:'Ingénieure développement en Logiciel de simulation',date:'18 novembre 2011',rubrique:[{nom:'chaouachi',contenu:'date'}]},
-  {id:12,Nom:'Mercier',prenom:'Charlotte',position:'Technicienne télécom et réseaux Informatique',date:'27 août 2007',rubrique:[{nom:'chaouachi',contenu:'date'}]}
+  {id:12,Nom:'Mercier',prenom:'Charlotte',position:'Technicienne télécom et réseaux Informatique',date:'27 août 2007',rubrique:[{nom:'chaouachi',contenu:'date'}, {nom:'',contenu:''}]}
 ];
 

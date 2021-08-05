@@ -1,0 +1,45 @@
+<tr >
+  <td (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">+</td>
+  <td>{{emp?.id}}</td>
+  <td>{{emp?.Nom}}</td>
+  <td>{{emp?.prenom}}</td>
+  <td>{{emp?.position}}</td>
+  <td>{{emp?.date}}</td>
+  <td ><button type="button" class="btn btn-outline-danger" (click)="addRubrique(Rubrique)" >Ajouter une rubrique</button></td>
+</tr>
+<tr  #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <td colspan="7">
+     <table class="w-100">
+       <tr *ngFor="let rubrique of emp?.rubrique">
+         <td>{{rubrique.nom}}</td>
+         <td>
+            {{rubrique.contenu}}
+         </td>
+
+       </tr>
+     </table>
+  </td>
+</tr>
+<ng-template let-modal #Rubrique>
+  <div class="modal-header">
+     <h4 class="modal-title" style="color: rgb(113, 116, 116);">Ajouter une Rubrique</h4>
+     <button type="button" class="close" style="color: rgb(5, 39, 230);" aria-label="Close" (click)="modal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Nom du rubrique</label>
+        <input type="text" class="form-control" id="name" placeholder="Entrer le nom" [(ngModel)]="rubriqueName" name="rubriqueName">
+      </div>
+      <div class="form-group">
+        <label for="content">Contenu du rubrique</label>
+        <input type="text" class="form-control" id="content" placeholder="Ajouter du contenu" [(ngModel)]="rubriqueContent" name="rubriqueContent">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+     <button type="button" class="btn add btn-outline-primary lighten-1" (click)="addNew()">Ajouter</button>
+  </div>
+</ng-template>

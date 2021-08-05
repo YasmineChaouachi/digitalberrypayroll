@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import{employes}from '../employes/listesemployes';
-import{Employee}from '../employes/employes';
-import { FormBuilder, FormGroup, Validators, FormArray,FormControl } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import{Employee, Rubrique}from '../employes/employes';
+
 @Component({
   selector: 'app-paie',
   templateUrl: './paie.component.html',
@@ -11,35 +10,66 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 })
 export class PaieComponent implements OnInit {
   employes=employes;
+  // employes: Employee[] = [];
   selectE?:Employee;
-  data={};
-  rubriqueForm= new FormGroup({
-    nom: new FormControl(''),
-    contenu: new FormControl(''),
-  });
-  constructor(private modalService:NgbModal, private fb: FormBuilder ) { }
+  error: string | null = null;
+
+  constructor() { }
 
   ngOnInit(): void {
+
+    this.loadEmployes();
+    console.log(this.employes); // output []
   }
 
-  showDetails(content:any,employe:Employee){
-    this.modalService.open(content);
-    this.data=employe
-    console.log(employe);
-    this.selectE=employe;
-let index = this.employes.indexOf(this.selectE);
-    // this.selectE.rubrique. = "Change Hardik";
-    this.employes[index] = this.selectE;
+  // add async if using await for promise
+  async loadEmployes() {
+    // TODO: call api get employes and store it in this.employes
+    // start loading
+    // getEmp().subscribe((emps) => {
+    //   this.employes = emps;
+    //   console.log(this.employes); // output = emps
+    //   for (const employe of this.employes) {
+    //   employe.rubrique.push({nom: 'ee', contenu: 'zz'});
+    //   }
+    // }, (err) => {
+        // this.error = err;
+    // }, () => {
+      // complete loading
+    // })
 
-    console.log(this.employes);
-    // var employesid=this.employes.filter(x=>x.id===id);
-    // // console.log(employesid);
-    // employesid.forEach(e=>{this.employes.push(this.data)});
+    // ----- ou -----
+
+    // start loading
+    try {
+      //  this.employes = await getEmp().toPromise();
+      //   for (const employe of this.employes) {
+      //   employe.rubrique.push({nom: 'ee', contenu: 'zz'});
+      //   }
+    } catch (err) {
+      this.error = err;
+    } finally {
+      // complete loading
+    }
+
   }
-  addNew(){
-    this.employes.push({id:9,Nom:'Dupont',prenom:'Léo',position:'Ingénieur technio-commercial en Informatique',date:'28 mars 2012',rubrique:[this.rubriqueForm.value]})
-    console.log(this.rubriqueForm.value);
+
+  addRubrique(rubrique: Rubrique, empId: number) {
+    // {id:12,Nom:'Mercier',prenom:'Charlotte',
+    // position:'Technicienne télécom et réseaux Informatique',date:'27 août 2007',
+    // rubrique:[{nom:'chaouachi',contenu:'date'}]}
+
+    const employe = this.employes.find(emp => emp.id === empId);
+    if (employe) {
+      employe.rubrique.push(rubrique);
+    }
+
+    // `/api/emp/${empId}/`
+    // const data: Partial<Employee> = {
+    //   rubrique: employe?.rubrique
+    // }
 
   }
 
 }
+

@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "html.format.endWithNewline": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.hovers.currentLine.over": "line",
+  "prettier.tabWidth": 4,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {}
+}

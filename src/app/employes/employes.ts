@@ -4,7 +4,7 @@ export interface  Employee{
   prenom:string;
   position:string;
   date:string;
-  rubrique:Array<Rubrique>;
+  rubrique: Rubrique[];
 }
 export interface Rubrique{
   nom:string;
